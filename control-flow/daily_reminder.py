@@ -1,10 +1,12 @@
-# Prompt user for inputs
-Task = input("Enter your task: ")
-Priority = input("Priority (high/medium/low): ").lower()
-TimeBound = input("Is it time-bound? (yes or no): ").lower()
+# daily_reminder.py
 
-# Process based on priority
-match Priority:
+# Prompt user for inputs (robustly)
+task = input("Enter your task: ").strip()
+priority = input("Priority (high/medium/low): ").strip().lower()
+time_bound = input("Is it time-bound? (yes or no): ").strip().lower()
+
+# Validate and process priority
+match priority:
     case "high":
         priority_text = "high"
     case "medium":
@@ -13,13 +15,13 @@ match Priority:
         priority_text = "low"
     case _:
         print("Invalid priority level. Please enter high, medium, or low.")
-        exit()
+        exit()  # Stop execution for invalid input
 
-# Process time-bound and print accordingly
-if TimeBound == "yes":
-    print(f"Reminder: '{Task}' is a {priority_text} priority task that requires immediate attention today!")
-elif TimeBound == "no":
-    print(f"Note: '{Task}' is a {priority_text} priority task. Consider completing it when you have free time.")
+# Validate time-bound and print the appropriate message
+if time_bound == "yes":
+    print(f"Reminder: '{task}' is a {priority_text} priority task that requires immediate attention today!")
+elif time_bound == "no":
+    print(f"Note: '{task}' is a {priority_text} priority task. Consider completing it when you have free time.")
 else:
     print("Invalid input for time-bound. Please enter yes or no.")
     exit()
