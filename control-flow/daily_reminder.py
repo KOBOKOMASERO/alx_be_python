@@ -1,12 +1,11 @@
 
 # Prompt user for inputs
-task = input("Enter your task: ")
-time_bound = input("Is it time-bound? (yes or no): ").lower()
-priority = input("Enter priority (high, medium, low): ").lower()
-t
+Task = input("Enter your task: ")
+Time_Bound = input("Is it time-bound? (yes or no): ").lower()
+Priority = input("Enter priority (high, medium, low): ").lower()
 
 # Process based on priority
-match priority:
+match Priority:
     case "high":
         priority_text = "high"
     case "medium":
@@ -18,13 +17,13 @@ match priority:
         exit()  # Stop execution for invalid input
 
 # Process time-bound
-if time_bound == "yes":
+if Time_Bound == "yes":
     time_text = "that requires immediate attention today!"
-elif time_bound == "no":
+elif Time_Bound == "no":
     time_text = "Consider completing it when you have free time."
 else:
     print("Invalid input for time-bound. Please enter yes or no.")
     exit()
 
 
-print(f"Reminder: '{task}' is a {priority_text} priority task {time_text}")
+print(f"Reminder: '{Task}' is a {priority_text} priority task {time_text}")
