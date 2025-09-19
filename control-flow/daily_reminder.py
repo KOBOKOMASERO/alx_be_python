@@ -1,7 +1,7 @@
 
 # Prompt user for inputs
 Task = input("Enter your task: ")
-Time_Bound = input("Is it time-bound? (yes or no): ").lower()
+TimeBound = input("Is it time-bound? (yes or no): ").lower()
 Priority = input("Enter priority (high, medium, low): ").lower()
 
 # Process based on priority
@@ -17,9 +17,9 @@ match Priority:
         exit()  # Stop execution for invalid input
 
 # Process time-bound
-if Time_Bound == "yes":
+if TimeBound == "yes":
     time_text = "that requires immediate attention today!"
-elif Time_Bound == "no":
+elif TimeBound == "no":
     time_text = "Consider completing it when you have free time."
 else:
     print("Invalid input for time-bound. Please enter yes or no.")
